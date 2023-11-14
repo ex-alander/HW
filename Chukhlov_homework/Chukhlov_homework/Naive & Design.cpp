@@ -30,12 +30,15 @@ void searchNaive(string txt, string pat) {
 
     for (int i = 0; i <= n - m; i++) { // we walk through the text
         int j;
-        for (j = 0; j < m; j++) { // if we find a match, we keep checking if it keeps matching
-            if (txt[i + j] != pat[j]) {
-                break; // matching stopped -> move forward
+        for (j = 0; j < m; j++) // if we find a match, we keep checking if it keeps matching
+        { 
+            if (txt[i + j] != pat[j]) 
+            {
+                break; // matching stopped -> leave the loop
             }
         }
-        if (j == m) { // if the index matches the length of input pattern, it means we won
+        if (j == m) // if the index matches the length of input pattern, it means we won
+        { 
             cout << "Pattern found at index " << i << endl; // print where pattern was found
             foundcheck = true; // we don't wanna print error if we found the pattern
         }
