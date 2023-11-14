@@ -9,9 +9,10 @@ int main()
 {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    string text = "What we've got here is failure to communicate. Some men you just can't reach. So you get what we had here last week, which is the way he wants it. Well, he gets it. And I don't like it any more than you men";
-    string search_word = "you";
-    cout << "Comparison of different search algorithms:\n\n" << flush;
+    string text = "Some men you just can't reach. So you get what we had here last week....";
+    string search_word = "So";
+    cout << "INPUT STRING (TEXT):        " << text << "\n" 
+         << "STRING TO SEARCH (PATTERN): " << search_word << "\n\n";
 
     // Naive
     divide();
