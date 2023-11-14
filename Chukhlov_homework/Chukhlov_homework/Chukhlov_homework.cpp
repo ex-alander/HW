@@ -4,23 +4,6 @@
 #include "Main Functions.h"
 #include <Windows.h>
 #define __STDC_WANT_LIB_EXT1__ 1
-void divide()
-{
-    cout << "------------------------------\n";
-}
-string rectangle(const string x)
-{
-    string rect_x;
-    string horiz_line = "";
-    for (int i = 0; i < x.length(); i++)
-    {
-        horiz_line += "-";
-    }
-    rect_x = "+" + horiz_line + "+" + "\n"
-        + "|" + x + "|" + "\n"
-        + "+" + horiz_line + "+";
-    return rect_x;
-}
 using namespace std;
 int main()
 {
