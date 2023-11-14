@@ -1,64 +1,46 @@
-#include<iostream>
-#include<string>
-using namespace std;
+#include <iostream>
+#include <string>
+#include <vector>
 
-// Функция для вычисления хеш-значения строки
-int calculateHashValue(string str, int q, int d)
-{
-    int hash = 0;
-    int n = str.length();
-    for (int i = 0; i < n; i++)
-    {
-        hash = (d * hash + str[i]) % q;
-    }
-    return hash;
-}
+#define d 256
+#define q 101 // Простое число
 
-// Функция для проверки совпадения подстроки со строкой
-bool checkMatch(string str, string pattern, int q, int d)
-{
-    int n = str.length();
+void rabinKarp(const std::string& text, const std::string& pattern) {
     int m = pattern.length();
-    int patternHash = calculateHashValue(pattern, q, d);
-    int strHash = calculateHashValue(str.substr(0, m), q, d);
+    int n = text.length();
+    int i, j;
+    int p = 0; // Хэш значение для pattern
+    int t = 0; // Хэш значение для text
+    int h = 1;
 
-    for (int i = 0; i <= n - m; i++)
-    {
-        if (patternHash == strHash)
-        {
-            bool flag = true;
-            for (int j = 0; j < m; j++)
-            {
-                if (pattern[j] != str[i + j])
-                {
-                    flag = false;
+    for (i = 0; i < m - 1; i++)
+        h = (h * d) % q;
+
+    // Вычисляем хэш значения для паттерна и первого окна текста
+    for (i = 0; i < m; i++) {
+        p = (d * p + pattern[i]) % q;
+        t = (d * t + text[i]) % q;
+    }
+
+    // Проходим по тексту с окном, которое сдвигается
+    for (i = 0; i <= n - m; i++) {
+        // Если хэш значения совпадают, проверяем каждый символ один за другим
+        if (p == t) {
+            for (j = 0; j < m; j++) {
+                if (text[i + j] != pattern[j])
                     break;
-                }
             }
-            if (flag)
-                return true;
+            // Если все символы совпали, то паттерн найден
+            if (j == m)
+                std::cout << "Паттерн найден на позиции: " << i << std::endl;
         }
+        // Вычисляем хэш значения для следующего окна текста
+        if (i < n - m) {
+            t = (d * (t - text[i] * h) + text[i + m]) % q;
 
-        if (i < n - m)
-        {
-            strHash = (int)(d * (strHash - str[i] * pow(d, m - 1)) + str[i + m]) % q;
-            if (strHash < 0)
-                strHash += q;
+            // Может получиться отрицательное значение t, в таком случае приводим его к положительному
+            if (t < 0)
+                t += q;
         }
     }
-    return false;
-}
-
-int main()
-{
-    setlocale(LC_ALL, "Russian");
-    string str = "ABABDABACDABABCABAB";
-    string pattern = "DAB";
-    int q = 101; // Простое число для деления
-    int d = 256; // Основание для вычисления хеш-значения
-    if (checkMatch(str, pattern, q, d))
-        cout << "Подстрока найдена.";
-    else
-        cout << "Подстрока не найдена.";
-    return 0;
 }
