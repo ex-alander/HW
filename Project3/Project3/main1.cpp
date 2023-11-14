@@ -8,7 +8,7 @@
 void rabinKarp(const std::string& text, const std::string& pattern) {
     int m = pattern.length();
     int n = text.length();
-    int i, j;
+    int i, j{};
     int p = 0; // Хэш значение для pattern
     int t = 0; // Хэш значение для text
     int h = 1;
@@ -41,6 +41,10 @@ void rabinKarp(const std::string& text, const std::string& pattern) {
             // Может получиться отрицательное значение t, в таком случае приводим его к положительному
             if (t < 0)
                 t += q;
+
         }
     }
+
+    if (j != m)
+        std::cout << "Паттерн не найден " << std::endl;
 }
