@@ -1,0 +1,6 @@
+﻿  dzehkaSilak.cpp
+C:\Users\Barabulkp\Documents\GitHub\dzeshka\dzehkaSilak\dzehkaSilak\dzehkaSilak.cpp(8,12): error C2015: слишком много знаков в константе
+C:\Users\Barabulkp\Documents\GitHub\dzeshka\dzehkaSilak\dzehkaSilak\dzehkaSilak.cpp(9,12): error C2440: =: невозможно преобразовать "int" в "char **"
+C:\Users\Barabulkp\Documents\GitHub\dzeshka\dzehkaSilak\dzehkaSilak\dzehkaSilak.cpp(9,12): message : Для преобразования из целого типа в указатель требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Users\Barabulkp\Documents\GitHub\dzeshka\dzehkaSilak\dzehkaSilak\dzehkaSilak.cpp(14,20): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\Barabulkp\Documents\GitHub\dzeshka\dzehkaSilak\dzehkaSilak\dzehkaSilak.cpp(15,20): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
