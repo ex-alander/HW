@@ -1,0 +1,4 @@
+﻿  Shift-Or.cpp
+C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Shift-Or.cpp(64,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Shift-Or.cpp(65,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  String_Search_Algos.vcxproj -> C:\Users\user\Documents\GitHub\HW\String_Search_Algos\x64\Debug\String_Search_Algos.exe
