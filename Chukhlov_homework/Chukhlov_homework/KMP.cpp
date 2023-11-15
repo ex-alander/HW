@@ -47,7 +47,7 @@ void KMPSearch(const string& tex, const string& pat) {
 
         if (j == M) {
             found = true;
-            cout << i - j << ';';
+            cout << "Pattern found at index " << i - j << endl;
             j = lps[j - 1];
         }
         else if (i < N && pat[j] != tex[i]) {
@@ -61,6 +61,6 @@ void KMPSearch(const string& tex, const string& pat) {
     }
 
     if (!found) {
-        cout << "no" << endl;
+        cout << "Pattern not found" << endl;
     }
 }

@@ -9,10 +9,21 @@ int main()
 {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    string text = "Some men you just can't reach. So you get what we had here last week....";
-    string search_word = "Soasdl";
+    const string text = "Some";
+    const string search_word = "So";
     cout << "INPUT STRING (TEXT):        " << text << "\n" 
          << "STRING TO SEARCH (PATTERN): " << search_word << "\n\n";
+
+    // check if the pattern isn't bigger than the text
+    if (search_word.length() > text.length())
+    {
+        SetConsoleTextAttribute(hConsole, 4);
+        divide();
+        cout << "WRONG INPUT\n";
+        divide();
+        SetConsoleTextAttribute(hConsole, 15);
+        return 0;
+    }
 
     // Naive
     divide();
