@@ -4,31 +4,26 @@
 #include "Main Functions.h"
 #include <Windows.h>
 #define __STDC_WANT_LIB_EXT1__ 1
-void divide()
-{
-    cout << "------------------------------\n";
-}
-string rectangle(const string x)
-{
-    string rect_x;
-    string horiz_line = "";
-    for (int i = 0; i < x.length(); i++)
-    {
-        horiz_line += "-";
-    }
-    rect_x = "+" + horiz_line + "+" + "\n"
-        + "|" + x + "|" + "\n"
-        + "+" + horiz_line + "+";
-    return rect_x;
-}
 using namespace std;
 int main()
 {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    string text = "What we've got here is failure to communicate. Some men you just can't reach. So you get what we had here last week, which is the way he wants it. Well, he gets it. And I don't like it any more than you men";
-    string search_word = "you men";
-    cout << "Comparison of different search algorithms:\n\n" << flush;
+    const string text = "Some";
+    const string search_word = "So";
+    cout << "INPUT STRING (TEXT):        " << text << "\n" 
+         << "STRING TO SEARCH (PATTERN): " << search_word << "\n\n";
+
+    // check if the pattern isn't bigger than the text
+    if (search_word.length() > text.length())
+    {
+        SetConsoleTextAttribute(hConsole, 4);
+        divide();
+        cout << "WRONG INPUT\n";
+        divide();
+        SetConsoleTextAttribute(hConsole, 15);
+        return 0;
+    }
 
     // Naive
     divide();
@@ -39,7 +34,7 @@ int main()
     searchNaive(text, search_word);
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> elapsed = end - start;
-    cout << "found in " << elapsed.count() / 1000 << " seconds"<<endl;
+    cout << "time consumption: " << elapsed.count() / 1000 << " seconds"<<endl;
     divide();
 
     // Knuth-Morris-Pratt
@@ -50,7 +45,7 @@ int main()
     KMPSearch(text, search_word);
     end = chrono::high_resolution_clock::now();
     elapsed = end - start;
-    cout << "found in " << elapsed.count() / 1000 << " seconds" << endl;
+    cout << "time consumption: " << elapsed.count() / 1000 << " seconds" << endl;
     divide();
 
     // Boyer Moore
@@ -58,10 +53,10 @@ int main()
     cout << rectangle("Boyer-Moore") << endl;
     SetConsoleTextAttribute(hConsole, 15);
     start = chrono::high_resolution_clock::now();
-    searchBoyerMoore(text, search_word);
+    cout << BW(text, search_word) << endl;
     end = chrono::high_resolution_clock::now();
     elapsed = end - start;
-    cout << "found in " << elapsed.count() / 1000 << " seconds" << endl;
+    cout << "time consumption: " << elapsed.count() / 1000 << " seconds" << endl;
     divide();
 
     // Rabin Karp
@@ -69,10 +64,10 @@ int main()
     cout << rectangle("Rabin-Karp") << endl;
     SetConsoleTextAttribute(hConsole, 15);
     start = chrono::high_resolution_clock::now();
-    searchRabinKarp(text, search_word);
+    rabinKarp(text, search_word);
     end = chrono::high_resolution_clock::now();
     elapsed = end - start;
-    cout << "found in " << elapsed.count() / 1000 << " seconds" << endl;
+    cout << "time consumption: " << elapsed.count() / 1000 << " seconds" << endl;
     divide();
 
     // Shift-Or
@@ -80,9 +75,9 @@ int main()
     cout << rectangle("Shift-Or") << endl;
     SetConsoleTextAttribute(hConsole, 15);
     start = chrono::high_resolution_clock::now();
-    searchShiftOr(text, search_word);
+    //searchShiftOr(text, search_word);
     end = chrono::high_resolution_clock::now();
     elapsed = end - start;
-    cout << "found in " << elapsed.count() / 1000 << " seconds" << endl;
+    cout << "time consumption: " << elapsed.count() / 1000 << " seconds" << endl;
     divide();
 }

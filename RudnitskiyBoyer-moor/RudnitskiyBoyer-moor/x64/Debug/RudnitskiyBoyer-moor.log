@@ -1,0 +1,7 @@
+﻿  RudnitskiyBoyer-moor.cpp
+D:\VS\Projects\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor.cpp(13,17): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS\Projects\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor.cpp(42,27): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS\Projects\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor.cpp(42,53): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS\Projects\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor.cpp(70,30): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS\Projects\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor\RudnitskiyBoyer-moor.cpp(79): warning C4715: BW: значение возвращается не при всех путях выполнения
+  RudnitskiyBoyer-moor.vcxproj -> D:\VS\Projects\RudnitskiyBoyer-moor\x64\Debug\RudnitskiyBoyer-moor.exe
