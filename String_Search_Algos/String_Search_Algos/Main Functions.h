@@ -16,4 +16,4 @@ void ArrayLPS(const string& pat, vector<int>& lps);
 void KMPSearch(const string& tex, const string& pat);
 void searchNaive(string txt, string pat);
 int BogviewChard(int j, char temp, string str);
-int BW(string source, string target);
+void BW(string source, string target);

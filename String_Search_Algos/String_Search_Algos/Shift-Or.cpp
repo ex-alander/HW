@@ -46,9 +46,9 @@ void search(const char* t, unsigned int n, const char* p, unsigned int m)
         if (~a & z) {
             printf("Pattern found at position %u\n", i - m + 1);
         }
+        else if ((!(~a & z)) && (i == n)) {
+            printf("Pattern not found");
     }
-    if ((!(~a & z)) && (i == n)) {
-        printf("Pattern not found\n");
     }
 
     free(B);

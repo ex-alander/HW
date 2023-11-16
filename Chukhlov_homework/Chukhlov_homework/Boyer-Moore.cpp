@@ -32,13 +32,13 @@ int BogviewChard(int j, char temp, string str)
     }
     return j - index;
 }
-int BW(string source, string target)
+void BW(string source, string target)
 {
+    bool foundcheck = false;
     int i = 0, j = 0, soulen = source.length(), tarlen = target.length(); // инициализация
     int badvalue = 0, distance = 0;
     if (soulen < tarlen) {// сравниваю длину
         printf("Длина строки меньше длины поискового запроса \n");
-        return -1;
     }
 
     i = tarlen - 1; j = tarlen - 1; // совпадение с конца
@@ -47,7 +47,8 @@ int BW(string source, string target)
         if (source[i] == target[j]) {// совпадение символов успешно
             if (j == 0) {
                 //printf("Успешное совпадение \n");
-                return i;
+                cout << "Pattern found at index " << i << endl;
+                foundcheck = true;
             }
 
             i--; j--;
@@ -71,4 +72,5 @@ int BW(string source, string target)
             }
         }
     }
+    if (!foundcheck) cout << "Pattern not found" << endl;
 }
