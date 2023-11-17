@@ -65,7 +65,7 @@ void Silakov(string text, string pattern) {
     unsigned int n = strlen(c_text);//Определяем длину строки
     unsigned int m = strlen(c_pattern);//Определяем длину шаблона
     if (m > n) {
-        fprintf(stderr, "Pattern must be shorter than text!\n");//Проверяем введённые данные на корректность
+        //fprintf(stderr, "Pattern must be shorter than text!\n");//Проверяем введённые данные на корректность
     }
     else if (m > BITSINWORD) {
         fprintf(stderr, "Pattern too long!\n");
