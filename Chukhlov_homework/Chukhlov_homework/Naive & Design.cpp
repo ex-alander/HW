@@ -6,7 +6,7 @@ using namespace std;
 // design stuff
 void divide()
 {
-    cout << "------------------------------------\n";
+    cout << "-------------------------------------\n";
 }
 string rectangle(const string x) // to make this nice little rectangle around the function
 {
