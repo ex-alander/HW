@@ -1,0 +1,4 @@
+﻿  main1.cpp
+C:\Users\igrou\OneDrive\Документы\GitHub\HW\Project3\Project3\main1.cpp(9,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\igrou\OneDrive\Документы\GitHub\HW\Project3\Project3\main1.cpp(10,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Project3.vcxproj -> C:\Users\igrou\OneDrive\Документы\GitHub\HW\Project3\x64\Debug\Project3.exe

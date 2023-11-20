@@ -4,8 +4,10 @@
 using namespace std;
 
 // for Rabin-Karp
+
 #define d 256
 #define q 101
+
 // Rabin-Karp algo
 void rabinKarp(const std::string& text, const std::string& pattern) {
     int m = pattern.length();
@@ -15,6 +17,7 @@ void rabinKarp(const std::string& text, const std::string& pattern) {
     int t = 0; // Хэш значение для text
     int h = 1;
 
+    
     for (i = 0; i < m - 1; i++)
         h = (h * d) % q;
 
