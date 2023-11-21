@@ -1,10 +1,9 @@
-﻿  Naive & Design.cpp
-C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Naive & Design.cpp(28,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Naive & Design.cpp(29,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
+﻿  Shift-Or.cpp
+C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Shift-Or.cpp(65,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\user\Documents\GitHub\HW\Chukhlov_homework\Chukhlov_homework\Shift-Or.cpp(66,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
   Generating code
-  2 of 179 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+  3 of 179 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   String_Search_Algos.vcxproj -> C:\Users\user\Documents\GitHub\HW\String_Search_Algos\x64\Release\String_Search_Algos.exe

@@ -28,7 +28,7 @@ void ArrayLPS(const string& pat, vector<int>& lps) {
     }
 }
 // Knuth-Morris-Pratt algo
-void KMPSearch(const string& tex, const string& pat) {
+void KMPSearch(const string tex, const string pat) {
     int M = pat.size(); // длинна строки
     int N = tex.size(); // длинна подстроки
 

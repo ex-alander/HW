@@ -10,6 +10,21 @@
 #define __STDC_WANT_LIB_EXT1__ 1
 using namespace std;
 
+void test_n_print(int color, string name, string text, string pattern, void (*func)(string, string))
+{
+        HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+    cout << rectangle(name) << endl;
+    SetConsoleTextAttribute(hConsole, 15);
+    auto start = chrono::high_resolution_clock::now();
+    func(text, pattern);
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double, milli> elapsed = end - start;
+    cout << "time consumption: " << elapsed.count() << " ms" << endl;
+    divide();
+}
+
 int main()
 {
     HANDLE  hConsole;
@@ -40,7 +55,7 @@ int main()
     //const string pattern = "qwertyuiopqwer"; // for qwertyuiop text
     
     /*short->repeats_yes*/
-    const string pattern = "l"; // for War&Peace text // scores 45 times on a 11400 text 
+    const string pattern = "Prince"; // for War&Peace text // scores 45 times on a 11400 text 
     //const string pattern = "ss";
     //const string pattern = "nn";
 
@@ -64,57 +79,17 @@ int main()
 
     // Naive
     divide();
-    SetConsoleTextAttribute(hConsole, 15);
-    cout << rectangle("Naive") << endl;
-    SetConsoleTextAttribute(hConsole, 15);
-    auto start = chrono::high_resolution_clock::now();
-    searchNaive(text, pattern);
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double, milli> elapsed = end - start;
-    cout << "time consumption: " << elapsed.count() << " ms" << endl;
-    divide();
+    test_n_print(15, "Naive", text, pattern, &searchNaive);
 
     // Knuth-Morris-Pratt
-    SetConsoleTextAttribute(hConsole, 14);
-    cout << rectangle("Knuth-Morris-Pratt") << endl;
-    SetConsoleTextAttribute(hConsole, 15);
-    start = chrono::high_resolution_clock::now();
-    KMPSearch(text, pattern);
-    end = chrono::high_resolution_clock::now();
-    elapsed = end - start;
-    cout << "time consumption: " << elapsed.count() << " ms" << endl;
-    divide();
+    test_n_print(14, "Knuth-Morris-Pratt", text, pattern, &KMPSearch);
 
     // Boyer Moore
-    SetConsoleTextAttribute(hConsole, 12);
-    cout << rectangle("Boyer-Moore") << endl;
-    SetConsoleTextAttribute(hConsole, 15);
-    start = chrono::high_resolution_clock::now();
-    BW(text, pattern);
-    end = chrono::high_resolution_clock::now();
-    elapsed = end - start;
-    cout << "time consumption: " << elapsed.count() << " ms" << endl;
-    divide();
+    test_n_print(12, "Boyer-Moore", text, pattern, &BW);
 
     // Rabin Karp
-    SetConsoleTextAttribute(hConsole, 3);
-    cout << rectangle("Rabin-Karp") << endl;
-    SetConsoleTextAttribute(hConsole, 15);
-    start = chrono::high_resolution_clock::now();
-    rabinKarp(text, pattern);
-    end = chrono::high_resolution_clock::now();
-    elapsed = end - start;
-    cout << "time consumption: " << elapsed.count() << " ms" << endl;
-    divide();
+    test_n_print(3, "Rabin Karp", text, pattern, &searchNaive);
 
     // Shift-Or
-    SetConsoleTextAttribute(hConsole, 10);
-    cout << rectangle("Shift-Or") << endl;
-    SetConsoleTextAttribute(hConsole, 15);
-    start = chrono::high_resolution_clock::now();
-    Silakov(text, pattern);
-    end = chrono::high_resolution_clock::now();
-    elapsed = end - start;
-    cout << "time consumption: " << elapsed.count() << " ms" << endl;
-    divide();
+    test_n_print(10, "Shift-Or", text, pattern, &Silakov);
 }
